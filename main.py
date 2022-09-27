@@ -1,11 +1,16 @@
-# This script finds if a number is prime or not
-user_input = int(input("What number are you checking?: "))
+# Prime Number Checker v3
+# Apparently, this is the simplest way to check for prime numbers (just one line less than v2)
+def prime_checker(number):
+    if number == 1 or number == 2:
+        print("It is a prime number.")
+    is_prime = True
+    for i in range (2, number):
+        if number % i == 0:
+            is_prime = False
+        if is_prime:
+            print("It's a prime number.")
+        else:
+            print("It;s not a prime number.")
 
-for number in range(2, user_input):
-    if number == user_input - 1:
-        print(f"\nYes. {user_input} is a prime number.")
-    elif user_input % number != 0:
-        continue
-    else:
-        print(f"\nNo. {user_input} is not a prime number.")
-        break
+n = int(input("Check this number: "))
+prime_checker(number=n)
